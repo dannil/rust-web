@@ -5,7 +5,7 @@ ADD . /app
 RUN cargo build --release
 
 # Runtime
-FROM gcr.io/distroless/cc
+FROM gcr.io/distroless/cc-debian12
 COPY --from=builder /app/target/release/rust-web /
 COPY --from=builder /app/Rocket.toml /
-CMD ["./rust-web"]
+CMD ["/rust-web"]
