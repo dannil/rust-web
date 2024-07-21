@@ -1,6 +1,8 @@
-#[macro_use] extern crate rocket;
+#[macro_use]
+extern crate rocket;
 
-#[cfg(test)] mod tests;
+#[cfg(test)]
+mod tests;
 
 #[derive(FromFormField)]
 enum Lang {
@@ -8,7 +10,7 @@ enum Lang {
     English,
     #[field(value = "ru")]
     #[field(value = "ру")]
-    Russian
+    Russian,
 }
 
 #[derive(FromForm)]
